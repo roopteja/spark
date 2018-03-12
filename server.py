@@ -1,3 +1,5 @@
+# Pyspark program to calculate the median for a set of images 
+# and then find the difference between the images and the median image.
 import os
 import sys
 import datetime
@@ -31,17 +33,20 @@ conf = SparkConf().setAppName("ServerApp")
 sc = SparkContext(conf=conf)
 filerdd = sc.binaryFiles("hdfs://roopteja:54310/user/trafficCamData/"+location+"/"+day+"/*.jpg")
 
+# This method filters images (files with which has date in their filenames) between the specified dates.
 def filterImages(imgFile):
     date = datetime.datetime.strptime(imgFile[0], "hdfs://roopteja:54310/user/trafficCamData/"+location+"/"+day+"/"+location+"%Y-%m-%d %H-%M-%S.jpg")
     if startDate < date < endDate:
         return True
     return False
+# Convert file into image format and then into an array.
 def loadImages(imgFile):
     from PIL import Image
     from StringIO import StringIO
     img = Image.open(StringIO(imgFile[1]))
     rgb = numpy.asarray(img,dtype=numpy.uint8)
-    return rgb    
+    return rgb 
+# Substract the calculated median image from each of images and save the result in a string.	
 def subtract(imgfile):
     val = numpy.subtract(median.value,imgfile)
     m_norm = numpy.float_(sum(abs(val)))

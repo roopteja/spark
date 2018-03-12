@@ -7,5 +7,5 @@ Once the image subtraction had been computed, the result was quantified by using
 The [Spark service](server.py) can be lanched from a [Restful API](Service.java) to get the result after substracting the median images from a set of images between the specified dates.
 
 This work has been published at Industrial Knowledge workshop, 9th International ACM Web Science Conference, Jun 2017. 
-Paper Tile: "(A Knowledge Graph Framework for Detecting Traffic Events Using Stationary Cameras)[https://corescholar.libraries.wright.edu/knoesis/1133/]".
+Paper Tile: "[A Knowledge Graph Framework for Detecting Traffic Events Using Stationary Cameras](https://corescholar.libraries.wright.edu/knoesis/1133/)".
 Authors: M. RoopTeja, L. Sarasi, T. Banerjee, and A. Sheth

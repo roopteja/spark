@@ -69,7 +69,7 @@ public class Service {
         SparkLauncher sparkLauncher = new SparkLauncher();
         sparkLauncher.setAppResource("/home/roopteja/server.py");
         sparkLauncher.setSparkHome("/home/roopteja/spark-1.6.1");
-        sparkLauncher.setMaster("spark://130.108.85.135:7077");
+        sparkLauncher.setMaster("spark://ipaddress:7077");
         sparkLauncher.setConf(SparkLauncher.DRIVER_MEMORY, "2g");
         sparkLauncher.addAppArgs(location, starttime, endtime);
         Process spark;
